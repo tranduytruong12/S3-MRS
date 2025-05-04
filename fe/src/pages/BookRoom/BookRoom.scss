@@ -1,0 +1,354 @@
+.book-room {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    flex: 1;
+    padding: 2rem;
+    padding-top: 110px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+      color: #1890ff;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #595959;
+    }
+  }
+
+  &__filters {
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    .ant-form-item {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__results {
+    margin-top: 2rem;
+  }
+
+  &__loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+    
+    p {
+      margin-top: 1rem;
+      color: #595959;
+    }
+  }
+
+  &__no-results {
+    text-align: center;
+    padding: 3rem 0;
+    
+    p {
+      color: #595959;
+      font-size: 1rem;
+    }
+  }
+
+  &__card {
+    height: 100%;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .ant-card-cover {
+      height: 180px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+    }
+    
+    &:hover .ant-card-cover img {
+      transform: scale(1.05);
+    }
+    
+    &--occupied {
+      opacity: 0.8;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 180px;
+        background: rgba(255, 0, 0, 0.1);
+        z-index: 1;
+      }
+    }
+  }
+
+  &__card-content {
+    padding: 0 0.5rem;
+  }
+
+  &__card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  &__card-details {
+    font-size: 0.9rem;
+    color: #595959;
+    
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__card-info {
+    margin-bottom: 1rem;
+  }
+
+  &__equipment {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  &__modal {
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    &-header {
+      display: flex;
+      gap: 2rem;
+      
+      img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+    
+    &-info {
+      flex: 1;
+      
+      h2 {
+        margin-top: 0;
+        color: #1890ff;
+      }
+    }
+    
+    &-footer {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__room-details {
+    margin-top: 1rem;
+    
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__availability-table {
+    margin: 1.5rem 0;
+    
+    h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: #1890ff;
+    }
+  }
+
+  &__time-section-group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    .ant-radio-button-wrapper {
+      flex: 1;
+      min-width: 110px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__cancellation-policy {
+    color: #595959;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    &__modal-header {
+      flex-direction: column;
+      gap: 1rem;
+      
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    
+    &__card {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// Custom notification styles
+.ant-notification {
+  z-index: 1050 !important;
+  
+  .ant-notification-notice-success {
+    background-color: #f6ffed;
+    border: 1px solid #b7eb8f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(0);
+    animation: notification-slide-in 0.3s ease-out;
+    
+    .ant-notification-notice-message {
+      color: #52c41a;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    
+    .ant-notification-notice-description {
+      font-size: 14px;
+      
+      p {
+        margin-bottom: 6px;
+        
+        &:last-child {
+          margin-top: 10px;
+          margin-bottom: 0;
+          font-weight: 500;
+        }
+        
+        strong {
+          font-weight: 600;
+          color: #1890ff;
+        }
+      }
+    }
+    
+    .ant-notification-notice-icon {
+      font-size: 24px;
+      margin-right: 16px;
+    }
+  }
+  
+  .ant-notification-notice-error {
+    background-color: #fff2f0;
+    border: 1px solid #ffccc7;
+    
+    .ant-notification-notice-message {
+      color: #ff4d4f;
+      font-weight: bold;
+    }
+  }
+  
+  .ant-notification-notice-warning {
+    background-color: #fffbe6;
+    border: 1px solid #ffe58f;
+    
+    .ant-notification-notice-message {
+      color: #faad14;
+      font-weight: bold;
+    }
+  }
+}
+
+// Add a subtle bounce effect to the notification
+@keyframes notification-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  70% {
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Styles for booking success notification component
+.booking-success-notification {
+  .view-history-btn {
+    margin-top: 10px;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    transition: all 0.3s;
+    
+    &:hover {
+      background-color: #096dd9;
+      border-color: #096dd9;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .anticon {
+      margin-right: 4px;
+    }
+  }
+  
+  p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    
+    &:first-child {
+      border-bottom: 1px dashed #b7eb8f;
+      padding-bottom: 6px;
+    }
+    
+    &:last-of-type {
+      color: #389e0d;
+      font-weight: 500;
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+  }
+} 

@@ -1,0 +1,135 @@
+.about-system {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 88px; // Account for fixed header height (64px) + some spacing
+
+    h1 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: var(--secondary-text);
+      font-weight: 400;
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__card {
+    margin-bottom: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--card-shadow);
+
+    .ant-card-body {
+      padding: 1.5rem;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      color: var(--text-color);
+      margin-top: 1.5rem;
+    }
+
+    p {
+      color: var(--text-color);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 1rem 0;
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+
+        &::before {
+          content: '•';
+          color: var(--primary-color);
+          position: absolute;
+          left: 0;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 992px) {
+  .about-system {
+    padding: 1.5rem;
+
+    &__header {
+      margin-bottom: 2rem;
+      padding-top: 88px;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .about-system {
+    padding: 1rem;
+
+    &__header {
+      margin-bottom: 1.5rem;
+      padding-top: 88px;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+    }
+
+    &__card {
+      .ant-card-body {
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+} 

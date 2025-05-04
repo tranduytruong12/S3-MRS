@@ -1,0 +1,1 @@
+Thư mục template chứa các template cấu trúc chung trong dự án. Vd: trang chủ và các trangg con luôn có header và footer thì ta sẽ tạo một template chứa header và footer

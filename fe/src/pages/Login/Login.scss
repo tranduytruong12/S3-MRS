@@ -1,0 +1,104 @@
+.login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  padding: 20px;
+
+  &__card {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-size: 24px;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+  }
+
+  &__error-alert {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  }
+
+  &__demo-credentials {
+    margin-top: 24px;
+    padding: 16px;
+    background-color: var(--background-color);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+
+    h3 {
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    p {
+      margin: 4px 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+  }
+
+  .ant-form-item {
+    margin-bottom: 16px;
+  }
+
+  .ant-input-affix-wrapper {
+    padding: 8px 11px;
+  }
+
+  .ant-btn {
+    height: 40px;
+    font-size: 16px;
+  }
+
+  // Responsive adjustments
+  @media (max-width: 576px) {
+    padding: 16px;
+
+    &__card {
+      padding: 16px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+    }
+  }
+}
+
+// Shake animation for error alert
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+} 

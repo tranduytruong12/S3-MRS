@@ -1,0 +1,276 @@
+.admin-layout {
+  min-height: 100vh;
+}
+
+.admin-sider {
+  background-color: #1a237e;
+  color: white;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.admin-logo {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-menu {
+  background-color: transparent;
+  border-right: none;
+  color: white;
+
+  .ant-menu-item {
+    color: white;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .ant-menu-item-selected {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.admin-logout {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.admin-header {
+  background-color: #ffffff;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: calc(100% - 250px);
+  right: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    margin: 0;
+    font-size: 20px;
+    color: #1a237e;
+  }
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .ant-switch {
+    background-color: var(--text-color);
+    
+    &.ant-switch-checked {
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+.admin-content {
+  margin-left: 250px;
+  margin-top: 64px;
+  padding: 24px;
+  background-color: #ffffff;
+  min-height: calc(100vh - 64px);
+}
+
+.admin-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.admin-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .ant-card-head {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .ant-table {
+    background-color: transparent;
+  }
+
+  .ant-table-thead > tr > th {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .ant-table-tbody > tr > td {
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+  }
+
+  .ant-table-tbody > tr:hover > td {
+    background-color: var(--hover-color);
+  }
+}
+
+// Status tag styles
+.ant-tag {
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &.ant-tag-success {
+    background-color: var(--success-bg);
+    color: var(--success-color);
+    border-color: var(--success-border);
+  }
+
+  &.ant-tag-processing {
+    background-color: var(--processing-bg);
+    color: var(--processing-color);
+    border-color: var(--processing-border);
+  }
+
+  &.ant-tag-warning {
+    background-color: var(--warning-bg);
+    color: var(--warning-color);
+    border-color: var(--warning-border);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 992px) {
+  .admin-sider {
+    width: 200px;
+  }
+
+  .admin-header {
+    left: 200px;
+  }
+
+  .admin-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-sider {
+    width: 0;
+    overflow: hidden;
+  }
+
+  .admin-header {
+    left: 0;
+  }
+
+  .admin-content {
+    margin-left: 0;
+    padding: 16px;
+  }
+}
+
+.dashboard {
+  .ant-statistic {
+    .ant-statistic-title {
+      color: #1a237e;
+    }
+    .ant-statistic-content {
+      color: #000000;
+    }
+  }
+
+  .ant-table {
+    background-color: #ffffff;
+    color: #000000;
+
+    .ant-table-thead > tr > th {
+      background-color: #ffffff;
+      color: #000000;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .ant-table-tbody > tr > td {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .ant-table-tbody > tr:hover > td {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+// Remove the old styles since we're using tables now
+.recent-bookings,
+.equipment-stats {
+  display: none;
+}
+
+.system-management {
+  .settings-section {
+    margin-bottom: 24px;
+
+    h3 {
+      color: #1a237e;
+      margin-bottom: 16px;
+    }
+  }
+
+  .system-logs {
+    .log-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px;
+      border-bottom: 1px solid #f0f0f0;
+
+      .time {
+        color: #000000;
+      }
+
+      .action {
+        color: #000000;
+      }
+
+      .user {
+        color: #000000;
+      }
+    }
+  }
+}
+
+// Theme variables
+:root {
+  --primary-color: #1890ff;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --border-color: #f0f0f0;
+  --hover-color: #f5f5f5;
+}
+
+[data-theme="dark"] {
+  --primary-color: #177ddc;
+  --background-color: #141414;
+  --text-color: #ffffff;
+  --border-color: #303030;
+  --hover-color: #1f1f1f;
+} 

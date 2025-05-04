@@ -1,0 +1,159 @@
+.hero {
+  padding: 6rem 2rem 4rem;
+  background: var(--hero-bg);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color);
+  transition: background 0.3s ease;
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    background-color: rgba(0, 0, 0, 0.0);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: none;
+
+    body.dark & {
+      background-color: rgba(0, 0, 0, 0.0);
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  &__actions {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+  }
+
+  &__action-card {
+    height: 100%;
+    background-color: var(--card-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-color: var(--border-color);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px var(--card-shadow);
+    }
+
+    .ant-card-body {
+      padding: 1.5rem;
+    }
+
+    .ant-btn {
+      height: 48px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      &-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+
+        &:hover {
+          background-color: var(--primary-hover);
+          border-color: var(--primary-hover);
+        }
+      }
+    }
+  }
+
+  &__stats {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__stat-card {
+    height: 100%;
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .ant-card-body {
+      padding: 1.5rem;
+    }
+
+    .ant-statistic {
+      .ant-statistic-title {
+        color: var(--secondary-text);
+        font-size: 1rem;
+      }
+
+      .ant-statistic-content {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .anticon {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1rem 3rem;
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+
+    &__action-card {
+      .ant-card-body {
+        padding: 1rem;
+      }
+
+      .ant-btn {
+        height: 40px;
+        font-size: 1rem;
+      }
+    }
+
+    &__stat-card {
+      .ant-card-body {
+        padding: 1rem;
+      }
+
+      .ant-statistic {
+        .ant-statistic-content {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+} 

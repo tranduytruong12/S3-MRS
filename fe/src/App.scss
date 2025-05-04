@@ -1,0 +1,106 @@
+// Theme variables
+:root {
+  --primary-color: #1a237e;
+  --primary-color-rgb: 26, 35, 126; // RGB values for #1a237e
+  --primary-hover: #283593;
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --header-bg: #ffffff;
+  --hero-bg: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  --footer-bg: #1a237e;
+  --footer-text: #ffffff;
+  --secondary-text: #666666;
+  --border-color: #e0e0e0;
+}
+
+// Dark theme variables
+body.dark {
+  --primary-color: #3f51b5;
+  --primary-color-rgb: 63, 81, 181; // RGB values for #3f51b5
+  --primary-hover: #5c6bc0;
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --header-bg: #1e1e1e;
+  --hero-bg: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  --footer-bg: #121212;
+  --footer-text: #ffffff;
+  --secondary-text: #bbbbbb;
+  --border-color: #333333;
+}
+
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+// Global styles
+#root {
+  min-height: 100vh;
+}
+
+// Ensure the theme class is applied to the body element
+body {
+  &.light {
+    background-color: #ffffff;
+    color: #333333;
+  }
+
+  &.dark {
+    background-color: #121212;
+    color: #ffffff;
+  }
+}
+
+// Utility classes
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Scrollbar styles
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-text);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+} 

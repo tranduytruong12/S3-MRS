@@ -1,0 +1,168 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    flex: 1;
+    padding-top: 64px; // Account for fixed header
+  }
+
+  &__carousel {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+
+    .ant-carousel {
+      height: 100%;
+
+      // Custom arrow styles
+      .slick-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        color: white;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 50%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+        }
+
+        &.slick-prev {
+          left: 20px;
+        }
+
+        &.slick-next {
+          right: 20px;
+        }
+      }
+
+      // Custom dots styles
+      .slick-dots {
+        bottom: 20px;
+
+        li {
+          button {
+            background: white;
+            opacity: 0.5;
+          }
+
+          &.slick-active {
+            button {
+              background: white;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    &-item {
+      height: 600px;
+    }
+
+    &-image {
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.7)
+        );
+      }
+    }
+
+    &-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+      max-width: 800px;
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 992px) {
+  .home {
+    &__carousel {
+      height: 500px;
+
+      &-item {
+        height: 500px;
+      }
+
+      &-content {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .home {
+    &__carousel {
+      height: 400px;
+
+      &-item {
+        height: 400px;
+      }
+
+      &-content {
+        padding: 1rem;
+
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      .ant-carousel {
+        .slick-arrow {
+          width: 30px;
+          height: 30px;
+          font-size: 18px;
+
+          &.slick-prev {
+            left: 10px;
+          }
+
+          &.slick-next {
+            right: 10px;
+          }
+        }
+      }
+    }
+  }
+} 

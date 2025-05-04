@@ -1,0 +1,144 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 4px var(--card-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  &__nav {
+    display: flex;
+    gap: 2rem;
+
+    &-item {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__language-select {
+    width: 120px;
+  }
+
+  &__theme-toggle {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    border: none;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    .anticon {
+      margin-right: 5px;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+
+    &:hover {
+      color: var(--primary-color);
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark & {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  &__login-button {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+
+    &:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+  }
+
+  &__user-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+
+  &__user-name {
+    font-weight: 500;
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+
+    &__nav {
+      display: none;
+    }
+
+    &__logo {
+      img {
+        height: 32px;
+      }
+    }
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__user-name {
+      display: none;
+    }
+  }
+} 
